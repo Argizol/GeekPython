@@ -64,11 +64,19 @@ if a in (DayOfWeek.SATURDAY.value, DayOfWeek.SUNDAY.value):
 elif a in (DayOfWeek.MONDAY.value, DayOfWeek.TUESDAY.value, DayOfWeek.WENDESDAY.value, DayOfWeek.THURSDAY.value ,DayOfWeek.FRIDAY.value):
     print(f"{DayOfWeek(a).name} не выходной")
 
-#Задание 7 (не понято ТЗ)
-#x = True
-#y = False
-#z = False
-#print(not (x or y  or z) == (not x and not y and not z))
+#Задание 7 
+
+x = [True, False]
+y = [True, False]
+z = [True, False]
+count = 0
+for i in x:
+    for j in y:
+        for g in z:
+            count += 1
+            print(f"{count} {not (x or y  or z) == (not x and not y and not z)}")
+
+
 
 #Задание 8
 print("Введите x")
