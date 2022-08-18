@@ -235,9 +235,10 @@ indexes = []
 numsForMultyply = []
 result = 1
 
-for i in range(-n, n):
+for i in range(-n, n + 1):
     listOfNums.append(i)
 print(listOfNums)
+
 with open(r"C:\Users\argiz\source\repos\GeekPython\Семинар1\Семинар1\Files\simple.txt") as f:
     F = f.read()
     nums = F.split('\n')
@@ -245,15 +246,24 @@ with open(r"C:\Users\argiz\source\repos\GeekPython\Семинар1\Семина�
 for n in nums:
     indexes.append(int(n))
 print(indexes)
+
+#def Mult(indexes, listOfNums):
+#    for i in range(len(listOfNums)):
+#        for j in range(len(indexes)):
+#            if (i == indexes[j]):
+#                numsForMultyply.append(listOfNums[i])
+#            else:
+#                continue
+#    return math.prod(numsForMultyply)
+#print(Mult(indexes, listOfNums))
+
 def Mult(indexes, listOfNums):
-    for i in range(0, len(listOfNums) - 1):
-        for j in range(0, len(indexes) - 1):
-            if (i == indexes[j]):
-                numsForMultyply.append(listOfNums[i])
-            else:
-                continue
+    for j in indexes:
+        numsForMultyply.append(listOfNums[j])
+           
     return math.prod(numsForMultyply)
 print(Mult(indexes, listOfNums))
+
 
 
 #Задание 18
