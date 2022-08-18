@@ -229,6 +229,14 @@
 
 import math
 
+n = int(input())
+listOfNums = []
+for i in range(-n, n):
+    listOfNums.append(i)
+with open() as f:
+    F = f.read()
+    nums = F.split(' ')
+print(nums)
 
 n = int(input())
 listOfNums = []
