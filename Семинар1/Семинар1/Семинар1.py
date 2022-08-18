@@ -205,14 +205,14 @@
 #Задание 16 
 #-Задать список из n чисел последовательности (1+1/n)**n и вывести на экран их сумму
 #16.1
-num = int(input())
-listOfNum = []
-result = 0
-for i in range(1, num + 1):
-    listOfNum.append((1 + 1 / i) ** i)
-for j in range(int(len(listOfNum))):
-    result += listOfNum[j]
-print(result)
+#num = int(input())
+#listOfNum = []
+#result = 0
+#for i in range(1, num + 1):
+#    listOfNum.append((1 + 1 / i) ** i)
+#for j in range(int(len(listOfNum))):
+#    result += listOfNum[j]
+#print(result)
 
 #16.2
 #k=4
@@ -227,7 +227,14 @@ print(result)
 #  Найти произведение элементов на указанных позициях.
 #   Позиции хранятся в файле file.txt в одной строке одно число
 
-
+n = int(input())
+listOfNums = []
+for i in range(-n, n):
+    listOfNums.append(i)
+with open() as f:
+    F = f.read()
+    nums = F.split(' ')
+print(nums)
 
 #Задание 18
 #Реализовать алгоритм перемешивания списка. 
