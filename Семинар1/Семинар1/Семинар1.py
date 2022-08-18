@@ -245,16 +245,15 @@ with open(r"C:\Users\argiz\source\repos\GeekPython\Семинар1\Семина�
 for n in nums:
     indexes.append(int(n))
 print(indexes)
-def Mult(indexes):
+def Mult(indexes, listOfNums):
     for i in range(0, len(listOfNums) - 1):
         for j in range(0, len(indexes) - 1):
             if (i == indexes[j]):
                 numsForMultyply.append(listOfNums[i])
             else:
                 continue
-    return numsForMultyply
-print(Mult(indexes))
-print(math.prod(Mult(indexes)))
+    return math.prod(numsForMultyply)
+print(Mult(indexes, listOfNums))
 
 
 #Задание 18
