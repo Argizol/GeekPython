@@ -231,15 +231,6 @@ import math
 
 n = int(input())
 listOfNums = []
-for i in range(-n, n):
-    listOfNums.append(i)
-with open() as f:
-    F = f.read()
-    nums = F.split(' ')
-print(nums)
-
-n = int(input())
-listOfNums = []
 indexes = []
 numsForMultyply = []
 result = 1
@@ -255,8 +246,8 @@ for n in nums:
     indexes.append(int(n))
 print(indexes)
 def Mult(indexes):
-    for i in listOfNums:
-        for j in indexes:
+    for i in range(0, len(listOfNums) - 1):
+        for j in range(0, len(indexes) - 1):
             if (i == indexes[j]):
                 numsForMultyply.append(listOfNums[i])
             else:
