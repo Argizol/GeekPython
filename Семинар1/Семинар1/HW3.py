@@ -71,7 +71,6 @@ def Fibonachi(num):
     fibonacchiRow = []
     firstNum = 0
     secondNum = 1
-    result = 0
     i = 0
     while(i < num):
         if (i == 0):
