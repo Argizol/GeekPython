@@ -181,7 +181,7 @@
 #Задание 14 
 #Подсчитать сумму цифр в вещественном числе.
 
-#num = input("Введите число ")
+#num = input("Введите число с точкой ")
 #result = 0
 #for i in range(len(num)):
 #    if (num[i] == '.'):
@@ -227,42 +227,42 @@
 #  Найти произведение элементов на указанных позициях.
 #  Позиции хранятся в файле file.txt в одной строке одно число
 
-import math
+#import math
 
-n = int(input())
-listOfNums = []
-indexes = []
-numsForMultyply = []
-result = 1
+#n = int(input())
+#listOfNums = []
+#indexes = []
+#numsForMultyply = []
+#result = 1
 
-for i in range(-n, n + 1):
-    listOfNums.append(i)
-print(listOfNums)
+#for i in range(-n, n + 1):
+#    listOfNums.append(i)
+#print(listOfNums)
 
-with open(r"C:\Users\argiz\source\repos\GeekPython\Семинар1\Семинар1\Files\simple.txt") as f:
-    F = f.read()
-    nums = F.split('\n')
+#with open(r"C:\Users\argiz\source\repos\GeekPython\Семинар1\Семинар1\Files\simple.txt") as f:
+#    F = f.read()
+#    nums = F.split('\n')
 
-for n in nums:
-    indexes.append(int(n))
-print(indexes)
+#for n in nums:
+#    indexes.append(int(n))
+#print(indexes)
+
+##def Mult(indexes, listOfNums):
+##    for i in range(len(listOfNums)):
+##        for j in range(len(indexes)):
+##            if (i == indexes[j]):
+##                numsForMultyply.append(listOfNums[i])
+##            else:
+##                continue
+##    return math.prod(numsForMultyply)
+##print(Mult(indexes, listOfNums))
 
 #def Mult(indexes, listOfNums):
-#    for i in range(len(listOfNums)):
-#        for j in range(len(indexes)):
-#            if (i == indexes[j]):
-#                numsForMultyply.append(listOfNums[i])
-#            else:
-#                continue
+#    for j in indexes:
+#        numsForMultyply.append(listOfNums[j])
+           
 #    return math.prod(numsForMultyply)
 #print(Mult(indexes, listOfNums))
-
-def Mult(indexes, listOfNums):
-    for j in indexes:
-        numsForMultyply.append(listOfNums[j])
-           
-    return math.prod(numsForMultyply)
-print(Mult(indexes, listOfNums))
 
 
 
@@ -276,5 +276,166 @@ print(Mult(indexes, listOfNums))
 
 #Задание 19
 # Реализовать алгоритм задания случайных чисел.
-#  Без использования встроенного генератора псевдослучайных чисел
+# Без использования встроенного генератора псевдослучайных чисел
+
+#from time import perf_counter
+
+#len_of_num = input('Enter the len of number: ')
+#output_number = 0
+#if len_of_num.isdigit():
+#    current_time = int(str(perf_counter()).split('.', 1)[-1])
+#    output_number = (str(current_time ** (int(len_of_num) // 6 + 1)))[:int(len_of_num)]
+#    print(output_number)
+#else:
+#    print('Please check if the entered value is a number')
+
+
+#Задание 20 
+#Определить, присутствует ли в заданном списке строк, некоторое число 
+
+#num = input()
+#listOfStrings = ["sfkjfj123", "oopsvl312", "poi0845", "pjhsadj21"]
+#for strings in listOfStrings:
+
+#    exist = num in strings
+#    print(exist)
+
+
+# Задание 21 Определить, позицию второго вхождения строки в списке либо сообщить, что её нет.
+#Примеры
+#список: ["qwe", "asd", "zxc", "qwe", "ertqwe"], ищем: "qwe", ответ: 3
+#список: ["йцу", "фыв", "ячс", "цук", "йцукен", "йцу"], ищем: "йцу", ответ: 5
+#список: ["йцу", "фыв", "ячс", "цук", "йцукен"], ищем: "йцу", ответ: -1
+#список: ["123", "234", 123, "567"], ищем: "123", ответ: -1
+#список: [], ищем: "123", ответ: -1
+
+#listOfStrings = ["qwe", "asd", "zxc", "qwe", "ertqwe"]
+#whatFind = "qwe"
+#listOfStrings = ["йцу", "фыв", "ячс", "цук", "йцукен", "йцу"]
+#whatFind = "йцу"
+#listOfStrings = ["йцу", "фыв", "ячс", "цук", "йцукен"]
+#whatFind = "йцу"
+#counter = 0
+
+#for i in range(len(listOfStrings)):
+    
+#    if listOfStrings[i] == whatFind: 
+#        counter += 1
+#        if counter == 2:
+#            print(i)
+#            break
+#if counter < 2:
+#    print(-1)
+
+    
+#Задание 22 
+#Найти сумму чисел списка стоящих на нечетной позиции
+
+#listOfNums = [1, 12, 43, 1, 0, 22]
+#result = 0
+
+##for i in range(len(listOfNums) // 2):
+##    result += listOfNums[2 * i + 1]
+#for i in range(len(listOfNums)):
+
+#    if i % 2 != 0:
+#        result += listOfNums[i]
+#print(result)
+
+#Задание 23
+#Найти произведение пар чисел в списке. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+# Пример: [2, 3, 4, 5, 6] => [12, 15, 16]; [2, 3, 5, 6] => [12, 15] 
+#listOfNum = [2, 3, 4, 5, 6]
+#result = []
+#listOfNum =[2, 3, 5, 6]
+#for i in range(int(len(listOfNum)/2 + len(listOfNum)%2)):
+#    #if len(listOfNum) % 2 == 0:
+#    #    if i >= len(listOfNum)//2:
+#    #        break
+#    #    else:
+#            result.append(listOfNum[i]*listOfNum[-(i + 1)])
+#    #else:
+#    #    if i > len(listOfNum)//2:
+#    #        break
+#    #    else:
+#    #        result.append(listOfNum[i]*listOfNum[-(i + 1)])
+#print(result)
+
+#Задание 24 
+#В заданном списке вещественных чисел найдите разницу между максимальным и минимальным значением дробной части элементов.
+# Пример: [1.1, 1.2, 3.1, 5, 10.01] => 0.19
+#listOfNums = [1.1, 1.2, 3.1, 5, 10.01]
+#listOfNumsAfterPoint = []
+
+#for num in listOfNums:
+#    if num % 1 != 0:
+#        listOfNumsAfterPoint.append(float('0.%s' % str(num).split('.')[1])) #listOfNumsAfterPoint.append(num % 1)
+#result = max(listOfNumsAfterPoint) - min(listOfNumsAfterPoint)
+#print(result)
+
+
+#Задание 25
+#Написать программу преобразования десятичного числа в двоичное
+#num = 45
+##45 -> 101101
+#def ToBynnary(number):
+#    result = ''    
+#    while(number != 0):    
+#            result = result + str(int(number % 2))
+#            number = int(number / 2)
+#    return result
+#print(ToBynnary(num))
+
+##Задание 26 
+##Дано число. Составить список чисел Фибоначчи, в том числе для отрицательных индексов. 
+##Т е для k = 8, список будет выглядеть так: [-21 ,13, -8, 5, −3,  2, −1,  1, 0, 1, 1, 2, 3, 5, 8, 13, 21] Негафибоначчи
+#a = 8
+
+#def Fibonachi(num):
+#    fibonacchiRow = []
+#    firstNum = 0
+#    secondNum = 1
+#    result = 0
+#    i = 0
+#    while(i < num):
+#        if (i == 0):
+#            fibonacchiRow.append(0)
+#        if (i == 1):
+#            fibonacchiRow.append(1)
+#            fibonacchiRow.insert(0, -1)
+#        else:
+#            result = firstNum + secondNum
+#            firstNum = secondNum
+#            secondNum = result
+#            fibonacchiRow.append(result)
+#            if fibonacchiRow[0] > 0:
+#                fibonacchiRow.insert(0, -result)
+#            else: 
+#                fibonacchiRow.insert(0, result)
+#        i += 1
+#    return fibonacchiRow
+#print(Fibonachi(8))
+
+#Задание 27 
+#Строка содержит набор чисел. Показать большее и меньшее число
+#Символ-разделитель - пробел
+
+#Задание 28 Найти корни квадратного уравнения Ax² + Bx + C = 0
+#Математикой
+#Используя дополнительные библиотеки*
+
+#Задание 29 
+#Найти НОК двух чисел
+
+#Задание 30
+# Вычислить число  c заданной точностью d
+# Пример: при d = 0.001,  = 3.141. 10-1d10-10
+     
+#Задание 30 *** , Подумать, что если точность вычисления до 1000 знаков после запятой
+
+#Задание 31
+#Составить список простых множителей натурального числа N
+
+
+
 
