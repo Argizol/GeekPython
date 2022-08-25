@@ -24,6 +24,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="HW3.py" />
+    <Compile Include="HW4.py" />
     <Compile Include="Семинар1.py" />
   </ItemGroup>
   <ItemGroup>

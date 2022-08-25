@@ -420,29 +420,151 @@
 #Строка содержит набор чисел. Показать большее и меньшее число
 #Символ-разделитель - пробел
 
-stringWithNums = "1 25 -6 17 24 15"
-stringNums = stringWithNums.split(' ')
-nums = []
-for num in stringNums:
-    nums.append(int(num))
-print(f"Максимальное число: {max(nums)}\nМинимальное число: {min(nums)}")
+#stringWithNums = "1 25 -6 17 24 15"
+#stringNums = stringWithNums.split(' ')
+#nums = []
+#for num in stringNums:
+#    nums.append(int(num))
+#print(f"Максимальное число: {max(nums)}\nМинимальное число: {min(nums)}")
 
 #Задание 28 Найти корни квадратного уравнения Ax² + Bx + C = 0
 #Математикой
 #Используя дополнительные библиотеки*
+#print('28. Найти корни квадратного уравнения Ax² + Bx + C = 0'
+#      '\n    a) Математикой'
+#      '\n    b) Используя дополнительные библиотеки')
+## a) Математикой
+#a, b, c = list(map(int, input("Enter the variable values separated by a space: ").split()))
+#discriminant = D = b ** 2 - 4 a * c
+#if D == 0:
+#    print('The discriminant is 0.\nThe only root of the equation is x = %.2f' % (-b / (2 * a)))
+#elif D < 0:
+#    print(f'The discriminant is less than 0.\nThe equation has no material roots.')
+#else:
+#    print(f'The discriminant is greater than 0.\nThe equation has 2 roots:')
+#    print('x_1 = %.2f,' % ((-b + D  0.5) / (2 * a)), 'x_2 = %.2f' % ((-b - D  0.5) / (2 * a)))
+## b) Используя дополнительные библиотеки*
+#import Mathf
+
+#x, y, z = list(map(int, input("Enter the variable values separated by a space: ").split()))
+#discriminant = D = pow(b, 2) - 4 * a * c
+#if D == 0:
+#    print('The discriminant is 0.\nThe only root of the equation is x = %.2f' % (-b / (2 * a)))
+#elif D < 0:
+#    print(f'The discriminant is less than 0.\nThe equation has no material roots.')
+#else:
+#    print(f'The discriminant is greater than 0.\nThe equation has 2 roots:')
+#    print('x_1 = %.2f,' % ((-b + Mathf.sqrt(D)) / (2 * a)), 'x_2 = %.2f' % ((-b - Mathf.sqrt(D)) / (2 * a))) 
 
 #Задание 29 
 #Найти НОК двух чисел
+#print('29. Найти НОК двух чисел')
+#import math
+## Математикой
+#a, b = map(int, input("Enter the variable values separated by a space: ").split())
+#least_common_multiple = max(a, b)
+#while True:
+#    if least_common_multiple % a == 0 and least_common_multiple % b == 0:
+#        print(f'The least common multiple is {least_common_multiple}')
+#        break
+#    else:
+#        least_common_multiple += 1
+## Библиотекой
+#x, y = map(int, input("Enter the variable values separated by a space: ").split())
+#print(f'The greatest common divisor is {(x * y) // math.lcm(y, x)}')
+#print(f'The least common multiple is {(x * y) // math.gcd(y, x)}')
+## Функцией
+
+
+#def calculate_lcm(m, n):
+#    if m > n:
+#        greater = m
+#    else:
+#        greater = n
+#    while True:
+#        if (greater % m == 0) and (greater % n == 0):
+#            lcm = greater
+#            break
+#        greater += 1
+#    return lcm
+#j, k = map(int, input("Enter the variable values separated by a space: ").split())
+#print('The least common multiple of %s and %s is %s' % (j, k, calculate_lcm(j, k)))
 
 #Задание 30
 # Вычислить число  c заданной точностью d
 # Пример: при d = 0.001,  = 3.141. 10-1d10-10
-     
-#Задание 30 *** , Подумать, что если точность вычисления до 1000 знаков после запятой
+from decimal import  *
+import math
+from random import randint, random
+from unicodedata import decimal 
+##ряд Нилоканта
+#getcontext().prec  =  1000
+#from decimal import Decimal
+#from unittest import result
+#def nilakantha ( reps ): 
+#        result  =  Decimal(3.0) 
+#        op  =  1 
+#        n  =  2 
+#        for  n  in  range ( 2 ,  2 * reps + 1 ,  2 ): 
+#                result  +=  4 / Decimal ( n * ( n + 1 ) * ( n + 2 ) * op ) 
+#                op  *=  - 1 
+#        return result
+       
+
+#print("Сколько повторов?") 
+#repetitions  =  int(input()) 
+#print(nilakantha(repetitions)) 
+#print( "3,1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679" )
+
+#Ряд обратных квадратов
+
+#pi = 0
+#userPrecision = int(input('Введите до какого знака после запятой вести расчет: '))
+#for i in range(1, 10 ** (userPrecision + 1)):
+#    pi += 1 / (i ** 2)
+    
+#piResult = Decimal((pi * 6)**0.5) 
+#print(str(piResult)[:(userPrecision + 2)])
+#3.141592644982389881391782182618044316768646240234375
+
+#Задание 30 *** , Подумать, что если точность вычисления до 1000 знаков после запятой / точность 1000 для ряда обратных квадратов
+
+
 
 #Задание 31
 #Составить список простых множителей натурального числа N
 
+#num = int(input())
+#listOfSimpleMultiplier = []
+#i = 2
+#while num > 1:
+#    while num % i == 0:
+#        listOfSimpleMultiplier.append(i)
+#        num //= i
+#    i += 1
+#print(listOfSimpleMultiplier)
 
+#Задание 32 Дана последовательность чисел.
+#Получить список неповторяющихся элементов исходной последовательности 
+#Пример: [1, 2, 3, 5, 1, 5, 3, 10] => [1, 2, 3, 5, 10]
 
+#listOfNums = [1, 2, 3, 5, 1, 5, 3, 10]
+#listOfUnicNums = []
+#for i in listOfNums:
+#    if i not in listOfUnicNums:
+#        listOfUnicNums.append(i)
+#print(listOfUnicNums)
 
+#Задание 33 Задана натуральная степень k.
+# Сформировать случайным образом список коэффициентов (значения от 0 до 100)
+#  многочлена и записать в файл многочлен степени k. 
+#  Пример: k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
+
+k = int(input('Введите макисмальный коэффициент степени для многочлена: '))
+resultString = ' '
+i = 1
+while i < k:
+    resultString += f'{randint(0, 100)}*x ^ {k} + '
+    k -= 1
+resultString += f'{randint(0, 100)} = 0' 
+print(resultString)
