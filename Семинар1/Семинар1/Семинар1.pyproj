@@ -32,6 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\simple.txt" />
+    <Content Include="Files\simple2.txt" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.10" />

@@ -1,6 +1,9 @@
 ﻿#Задание 31
 #Составить список простых множителей натурального числа N
 
+from ntpath import join
+
+
 num = int(input())
 listOfSimpleMultiplier = []
 i = 2
@@ -28,7 +31,7 @@ print(listOfUnicNums)
 #  Пример: k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
 
 k = int(input('Введите макисмальный коэффициент степени для многочлена: '))
-resultString = ' '
+resultString = ''
 if k >= 0:
     while k > 0:
         if k == 1:
@@ -36,12 +39,14 @@ if k >= 0:
         else:
             resultString += f'{randint(0, 100)}*x^{k} + '
         k -= 1
-    resultString += f'{randint(0, 100)} = 0'
+
 else:
     while k < 0:
         resultString += f'{randint(0, 100)}*x^{k} + '
         k += 1
-    resultString += f'{randint(0, 100)} = 0'
+resultString += f'{randint(0, 100)} = 0'
+with open(r'C:\Users\argiz\source\repos\GeekPython\Семинар1\Семинар1\Files\hw4.txt','+a') as f:
+    f.write(resultString + '\n')
 print(resultString)
 
 
