@@ -28,7 +28,7 @@ print(listOfUnicNums)
 #  Пример: k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
 
 k = int(input('Введите макисмальный коэффициент степени для многочлена: '))
-resultString = ' '
+resultString = ''
 if k >= 0:
     while k > 0:
         if k == 1:
