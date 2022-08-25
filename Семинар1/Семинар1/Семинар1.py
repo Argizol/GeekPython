@@ -562,9 +562,17 @@ from unicodedata import decimal
 
 k = int(input('Введите макисмальный коэффициент степени для многочлена: '))
 resultString = ' '
-i = 1
-while i < k:
-    resultString += f'{randint(0, 100)}*x ^ {k} + '
-    k -= 1
-resultString += f'{randint(0, 100)} = 0' 
+if k >= 0:
+    while k > 0:
+        if k == 1:
+            resultString += f'{randint(0, 100)}*x + '
+        else:
+            resultString += f'{randint(0, 100)}*x^{k} + '
+        k -= 1
+    resultString += f'{randint(0, 100)} = 0'
+else:
+    while k < 0:
+        resultString += f'{randint(0, 100)}*x^{k} + '
+        k += 1
+    resultString += f'{randint(0, 100)} = 0'
 print(resultString)
