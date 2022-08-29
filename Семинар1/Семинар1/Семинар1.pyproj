@@ -24,6 +24,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="HW3.py" />
+    <Compile Include="HW4.py" />
+    <Compile Include="HW5.py" />
     <Compile Include="Семинар1.py" />
   </ItemGroup>
   <ItemGroup>
@@ -31,6 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\simple.txt" />
+    <Content Include="Files\simple2.txt" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.10" />
