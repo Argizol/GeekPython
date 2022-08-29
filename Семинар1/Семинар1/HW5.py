@@ -75,7 +75,19 @@ def pcTurn(numsOfCandies):
     print(f'Компьютер забирает {takenCandies} конфет. Осталось конфет: {numsOfCandies}')
     return numsOfCandies
 
-
+while numsOfCandies > 0:
+        if numsOfCandies > 0:
+            print('Ход игрока 1')
+            numsOfCandies = playerTurn(numsOfCandies)
+            counter += 1
+        if numsOfCandies > 0:
+            print('Ход Бота')
+            numsOfCandies = pcTurn(numsOfCandies)
+            counter += 1
+if counter % 2 == 0:
+    print('Победил Бот')
+else:
+    print('Победил игрок 1')
 
 
 
