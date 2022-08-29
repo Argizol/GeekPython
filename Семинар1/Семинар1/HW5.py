@@ -13,7 +13,7 @@ print(strResult.strip())
 #Условие задачи: На столе лежит 2021 конфета. Играют два игрока делая ход друг после друга. Первый ход определяется жеребьёвкой. За один ход можно забрать не более чем 28 конфет. Все конфеты оппонента достаются сделавшему последний ход. Сколько конфет нужно взять первому игроку, чтобы забрать все конфеты у своего конкурента?
 #a) Добавьте игру против бота
 #b) Подумайте как наделить бота ""интеллектом""
-
+from random import randint as randint
 numsOfCandies = 2021
 counter = 0
 def playerTurn(numsOfCandies):
@@ -30,23 +30,56 @@ def playerTurn(numsOfCandies):
     numsOfCandies -= takenCandies   
     return numsOfCandies
 
+def pcTurn(numsOfCandies):
+    takenCandies = 0
+    while takenCandies > numsOfCandies:
+        takenCandies = randint(1, 500)
+        # print(f'Компьютер забирает {takenCandies} конфет. ', end='')
+    while takenCandies <= 0 or takenCandies > 500:
+        takenCandies = int(input('Брать можно только от 1 до 28 конфет. Попробуйте снова: '))
+        if numsOfCandies < takenCandies:
+            print(f'осталось {numsOfCandies} конфет, введите число от 1 до {numsOfCandies}')
+    if numsOfCandies < takenCandies:
+        while takenCandies <= 0 or takenCandies > numsOfCandies:
+            takenCandies = int(input(f'осталось {numsOfCandies} конфет, введите число от 1 до {numsOfCandies}: '))
+    numsOfCandies -= takenCandies
+    print(f'Компьютер забирает {takenCandies} конфет. Осталось конфет: {numsOfCandies}')
+    return numsOfCandies
+
 while numsOfCandies > 0:
         if numsOfCandies > 0:
             print('Ход игрока 1')
             numsOfCandies = playerTurn(numsOfCandies)
             counter += 1
         if numsOfCandies > 0:
-            print('Ход игрока 2')
-            numsOfCandies = playerTurn(numsOfCandies)
+            print('Ход игрока Бота')
+            numsOfCandies = pcTurn(numsOfCandies)
             counter += 1
 if counter % 2 == 0:
     print('Победил игрок 2')
 else:
     print('Победил игрок 1')
+##С ботом
+#while numsOfCandies > 0:
+#    if numsOfCandies > 0:
+#        print('Ход игрока 1')
+#        numsOfCandies = playerTurn(numsOfCandies)
+#        counter += 1
+#    if numsOfCandies > 0:
+#        print('Ход игрока Бота')
+#        numsOfCandies = pcTurn(numsOfCandies)
+#        counter += 1
+#if counter % 2 == 0:
+#    print('Победил игрок 2')
+#else:
+#    print('Победил игрок 1')
 
 #Создайте программу для игры в ""Крестики-нолики"".
 
+
 #Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
+
+
 
 
 

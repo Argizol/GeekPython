@@ -2,6 +2,7 @@
 #Составить список простых множителей натурального числа N
 
 from ntpath import join
+from random import randint
 
 
 num = int(input())
