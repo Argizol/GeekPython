@@ -659,3 +659,76 @@ from unicodedata import decimal
 
 #Создайте программу для игры в ""Крестики-нолики"".
 
+#game_matrix = [[None, None, None], [None, None, None], [None, None, None]]
+#game_is_on = True
+#while game_is_on:
+#    # Крестик - латинская буква X, нолик - латинская буква O 
+#    # Ходы принимаются в формате [0][0] = "X" или [2][1] = "О"
+#    move = input()
+#    exec("game_matrix" + move)
+#    for row in game_matrix:
+#        print(row)
+    
+#    reference_matrix = [
+#        game_matrix[0],
+#        game_matrix[1],
+#        game_matrix[2],
+#        [i[0] for i in game_matrix],
+#        [i[1] for i in game_matrix],
+#        [i[2] for i in game_matrix],
+#        [game_matrix[0][0], game_matrix[1][1], game_matrix[2][2]],
+#        [game_matrix[0][2], game_matrix[1][1], game_matrix[2][0]]
+#    ]
+#    for item in reference_matrix:
+#        result = list(set(item))
+#        if len(result) == 1 and result[0] != None:
+#            print("Game over!")
+#            game_is_on = False
+#            break
+
+
+#Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
+#def encode(data):
+#    encoding = ''
+#    prev_char = ''
+#    count = 1
+#    if not data:
+#        return ''
+#    for char in data:
+#        if char != prev_char:
+#            if prev_char:
+#                encoding += str(count) + prev_char
+#            count = 1
+#            prev_char = char
+#        else:
+#            count += 1
+#    else:
+#        encoding += str(count) + prev_char
+#        with open(r'd:\PyProjects\python_lesson_5\task_42_output_data.txt', '+a') as f:
+#            f.write(f'Encoded data: {encoding}\n')
+#        return encoding
+
+
+#def decode(data):
+#    decoding = ''
+#    count = ''
+#    for char in data:
+#        if char.isdigit():
+#            count += char
+#        else:
+#            decoding += char * int(count)
+#            count = ''
+#    with open(r'd:\PyProjects\python_lesson_5\task_42_output_data.txt', '+a') as f:
+#        f.write(f'Decoded data: {decoding}\n')
+#    return decoding
+
+
+#with open(r'd:\PyProjects\python_lesson_5\task_42_encoding_data.txt', 'r') as f:
+#    encoding_data = f.read()
+## encoding_data = 'AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEE'
+#print(f'Encoded data: {encode(encoding_data)}')
+
+#with open(r'd:\PyProjects\python_lesson_5\task_42_decoding_data.txt', 'r') as f:
+#    decoding_data = f.read()
+## decoding_data = '6A1F2D7C1A17E'
+#print(f'Decoded data: {decode(decoding_data)}')
