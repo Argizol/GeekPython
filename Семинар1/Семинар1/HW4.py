@@ -19,7 +19,7 @@ print(listOfSimpleMultiplier)
 #Получить список неповторяющихся элементов исходной последовательности 
 #Пример: [1, 2, 3, 5, 1, 5, 3, 10] => [1, 2, 3, 5, 10]
 
-listOfNums = [1, 2, 3, 5, 1, 5, 3, 10]
+listOfNums = [x for x in range(11)]
 listOfUnicNums = []
 for i in listOfNums:
     if i not in listOfUnicNums:

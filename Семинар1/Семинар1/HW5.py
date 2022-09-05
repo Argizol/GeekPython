@@ -139,17 +139,17 @@ def decode(data):
         else:
             decoding += char * int(count)
             count = ''
-    with open(r'd:\PyProjects\python_lesson_5\task_42_output_data.txt', '+a') as f:
+    with open(r'task_42_output_data.txt', '+a') as f:
         f.write(f'Decoded data: {decoding}\n')
     return decoding
 
 
-with open(r'd:\PyProjects\python_lesson_5\task_42_encoding_data.txt', 'r') as f:
+with open(r'task_42_encoding_data.txt', 'r') as f:
     encoding_data = f.read()
 # encoding_data = 'AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEE'
 print(f'Encoded data: {encode(encoding_data)}')
 
-with open(r'd:\PyProjects\python_lesson_5\task_42_decoding_data.txt', 'r') as f:
+with open(r'task_42_decoding_data.txt', 'r') as f:
     decoding_data = f.read()
 # decoding_data = '6A1F2D7C1A17E'
 print(f'Decoded data: {decode(decoding_data)}')
