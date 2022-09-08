@@ -1,53 +1,155 @@
-#Напишите программу, удаляющую из текста все слова, содержащие ""абв"".
+##РќР°РїРёС€РёС‚Рµ РїСЂРѕРіСЂР°РјРјСѓ, СѓРґР°Р»СЏСЋС‰СѓСЋ РёР· С‚РµРєСЃС‚Р° РІСЃРµ СЃР»РѕРІР°, СЃРѕРґРµСЂР¶Р°С‰РёРµ ""Р°Р±РІ"".
 
 #str1 = list(input().split())
-str1 = ['абв', 'пдлдляв', 'абвщлли', 'ащдлпоь']
-str2 = [str1[x] for x in range(len(str1)) if not str1[x].__contains__("абв")]
+str1 = str1 = ['Р°Р±РІ', 'РїРґР»РґР»СЏРІ', 'Р°Р±РІС‰Р»Р»Рё', 'Р°С‰РґР»РїРѕСЊ']
+str2 = [str1[x] for x in range(len(str1)) if not str1[x].__contains__("Р°Р±РІ")]
 strResult = ''
 for i in str2:
     strResult += i + ' '
 print(strResult.strip())
 
 
-#Создайте программу для игры с конфетами человек против человека.
-#Условие задачи: На столе лежит 2021 конфета. Играют два игрока делая ход друг после друга. Первый ход определяется жеребьёвкой. За один ход можно забрать не более чем 28 конфет. Все конфеты оппонента достаются сделавшему последний ход. Сколько конфет нужно взять первому игроку, чтобы забрать все конфеты у своего конкурента?
-#a) Добавьте игру против бота
-#b) Подумайте как наделить бота ""интеллектом""
-
+##РЎРѕР·РґР°Р№С‚Рµ РїСЂРѕРіСЂР°РјРјСѓ РґР»СЏ РёРіСЂС‹ СЃ РєРѕРЅС„РµС‚Р°РјРё С‡РµР»РѕРІРµРє РїСЂРѕС‚РёРІ С‡РµР»РѕРІРµРєР°.
+##РЈСЃР»РѕРІРёРµ Р·Р°РґР°С‡Рё: РќР° СЃС‚РѕР»Рµ Р»РµР¶РёС‚ 2021 РєРѕРЅС„РµС‚Р°. РРіСЂР°СЋС‚ РґРІР° РёРіСЂРѕРєР° РґРµР»Р°СЏ С…РѕРґ РґСЂСѓРі РїРѕСЃР»Рµ РґСЂСѓРіР°.
+# РџРµСЂРІС‹Р№ С…РѕРґ РѕРїСЂРµРґРµР»СЏРµС‚СЃСЏ Р¶РµСЂРµР±СЊС‘РІРєРѕР№. Р—Р° РѕРґРёРЅ С…РѕРґ РјРѕР¶РЅРѕ Р·Р°Р±СЂР°С‚СЊ РЅРµ Р±РѕР»РµРµ С‡РµРј 28 РєРѕРЅС„РµС‚. Р’СЃРµ РєРѕРЅС„РµС‚С‹ РѕРїРїРѕРЅРµРЅС‚Р° РґРѕСЃС‚Р°СЋС‚СЃСЏ СЃРґРµР»Р°РІС€РµРјСѓ РїРѕСЃР»РµРґРЅРёР№ С…РѕРґ.
+# РЎРєРѕР»СЊРєРѕ РєРѕРЅС„РµС‚ РЅСѓР¶РЅРѕ РІР·СЏС‚СЊ РїРµСЂРІРѕРјСѓ РёРіСЂРѕРєСѓ, С‡С‚РѕР±С‹ Р·Р°Р±СЂР°С‚СЊ РІСЃРµ РєРѕРЅС„РµС‚С‹ Сѓ СЃРІРѕРµРіРѕ РєРѕРЅРєСѓСЂРµРЅС‚Р°?
+##a) Р”РѕР±Р°РІСЊС‚Рµ РёРіСЂСѓ РїСЂРѕС‚РёРІ Р±РѕС‚Р°
+##b) РџРѕРґСѓРјР°Р№С‚Рµ РєР°Рє РЅР°РґРµР»РёС‚СЊ Р±РѕС‚Р° ""РёРЅС‚РµР»Р»РµРєС‚РѕРј""
+from random import randint as randint
 numsOfCandies = 2021
 counter = 0
 def playerTurn(numsOfCandies):
     if numsOfCandies == 0:
         return -1
-    takenCandies = int(input("Введите сколько конфет вы забираете: "))
+    takenCandies = int(input("Р’РІРµРґРёС‚Рµ СЃРєРѕР»СЊРєРѕ РєРѕРЅС„РµС‚ РІС‹ Р·Р°Р±РёСЂР°РµС‚Рµ: "))
     while takenCandies <= 0 or takenCandies > 28:
-        takenCandies = int(input('Брать можно только от 1 до 28 конфет. Попробуйте снова: '))
+        takenCandies = int(input('Р‘СЂР°С‚СЊ РјРѕР¶РЅРѕ С‚РѕР»СЊРєРѕ РѕС‚ 1 РґРѕ 28 РєРѕРЅС„РµС‚. РџРѕРїСЂРѕР±СѓР№С‚Рµ СЃРЅРѕРІР°: '))
         if numsOfCandies < takenCandies:
-             print(f'осталось {numsOfCandies} конфет, введите число от 1 до {numsOfCandies}')
+             print(f'РѕСЃС‚Р°Р»РѕСЃСЊ {numsOfCandies} РєРѕРЅС„РµС‚, РІРІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РѕС‚ 1 РґРѕ {numsOfCandies}')
     if numsOfCandies < takenCandies:
         while takenCandies <= 0 or takenCandies > numsOfCandies:    
-            takenCandies = int(input(f'осталось {numsOfCandies} конфет, введите число от 1 до {numsOfCandies}: '))    
+            takenCandies = int(input(f'РѕСЃС‚Р°Р»РѕСЃСЊ {numsOfCandies} РєРѕРЅС„РµС‚, РІРІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РѕС‚ 1 РґРѕ {numsOfCandies}: '))    
     numsOfCandies -= takenCandies   
+    return numsOfCandies
+
+#while numsOfCandies > 0:
+#        if numsOfCandies > 0:
+#            print('РҐРѕРґ РёРіСЂРѕРєР° 1')
+#            numsOfCandies = playerTurn(numsOfCandies)
+#            counter += 1
+#        if numsOfCandies > 0:
+#            print('РҐРѕРґ РёРіСЂРѕРєР° 2')
+#            numsOfCandies = playerTurn(numsOfCandies)
+#            counter += 1
+#if counter % 2 == 0:
+#    print('РџРѕР±РµРґРёР» РёРіСЂРѕРє 2')
+#else:
+#    print('РџРѕР±РµРґРёР» РёРіСЂРѕРє 1')
+
+# РЎ Р±РѕС‚РѕРј
+from random import randint as randint
+numsOfCandies = 2021
+counter = 0
+
+def pcTurn(numsOfCandies):
+    takenCandies = randint(1, 28)
+    while takenCandies > numsOfCandies:
+        takenCandies = randint(1, 28)
+    if numsOfCandies <= 28:
+        takenCandies = numsOfCandies
+    if 28 < numsOfCandies < 56:
+        takenCandies = numsOfCandies - 29
+    numsOfCandies -= takenCandies
+    print(f'Р‘РѕС‚ Р·Р°Р±РёСЂР°РµС‚ {takenCandies} РєРѕРЅС„РµС‚. РћСЃС‚Р°Р»РѕСЃСЊ РєРѕРЅС„РµС‚: {numsOfCandies}')
     return numsOfCandies
 
 while numsOfCandies > 0:
         if numsOfCandies > 0:
-            print('Ход игрока 1')
+            print('РҐРѕРґ РёРіСЂРѕРєР° 1')
             numsOfCandies = playerTurn(numsOfCandies)
             counter += 1
         if numsOfCandies > 0:
-            print('Ход игрока 2')
-            numsOfCandies = playerTurn(numsOfCandies)
+            print('РҐРѕРґ Р‘РѕС‚Р°')
+            numsOfCandies = pcTurn(numsOfCandies)
             counter += 1
 if counter % 2 == 0:
-    print('Победил игрок 2')
+    print('РџРѕР±РµРґРёР» Р‘РѕС‚')
 else:
-    print('Победил игрок 1')
-
-#Создайте программу для игры в ""Крестики-нолики"".
-
-#Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
+    print('РџРѕР±РµРґРёР» РёРіСЂРѕРє')
 
 
+##РЎРѕР·РґР°Р№С‚Рµ РїСЂРѕРіСЂР°РјРјСѓ РґР»СЏ РёРіСЂС‹ РІ ""РљСЂРµСЃС‚РёРєРё-РЅРѕР»РёРєРё"".
+
+game_matrix = [[None, None, None], [None, None, None], [None, None, None]]
+game_is_on = True
+while game_is_on:
+    # РљСЂРµСЃС‚РёРє - Р»Р°С‚РёРЅСЃРєР°СЏ Р±СѓРєРІР° X, РЅРѕР»РёРє - Р»Р°С‚РёРЅСЃРєР°СЏ Р±СѓРєРІР° O 
+    # РҐРѕРґС‹ РїСЂРёРЅРёРјР°СЋС‚СЃСЏ РІ С„РѕСЂРјР°С‚Рµ [0][0] = "X" РёР»Рё [2][1] = "Рћ"
+    move = input()
+    exec("game_matrix" + move)
+    for row in game_matrix:
+        print(row)
+    
+    reference_matrix = [
+        game_matrix[0],
+        game_matrix[1],
+        game_matrix[2],
+        [i[0] for i in game_matrix],
+        [i[1] for i in game_matrix],
+        [i[2] for i in game_matrix],
+        [game_matrix[0][0], game_matrix[1][1], game_matrix[2][2]],
+        [game_matrix[0][2], game_matrix[1][1], game_matrix[2][0]]
+    ]
+    for item in reference_matrix:
+        result = list(set(item))
+        if len(result) == 1 and result[0] != None:
+            print("Game over!")
+            game_is_on = False
+            break
+
+##Р РµР°Р»РёР·СѓР№С‚Рµ RLE Р°Р»РіРѕСЂРёС‚Рј: СЂРµР°Р»РёР·СѓР№С‚Рµ РјРѕРґСѓР»СЊ СЃР¶Р°С‚РёСЏ Рё РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ РґР°РЅРЅС‹С….
+
+def encode(data):
+    encoding = ''
+    prev_char = ''
+    count = 1
+    if not data:
+        return ''
+    for char in data:
+        if char != prev_char:
+            if prev_char:
+                encoding += str(count) + prev_char
+            count = 1
+            prev_char = char
+        else:
+            count += 1
+    else:
+        encoding += str(count) + prev_char
+        with open(r'd:\PyProjects\python_lesson_5\task_42_output_data.txt', '+a') as f:
+            f.write(f'Encoded data: {encoding}\n')
+        return encoding
 
 
+def decode(data):
+    decoding = ''
+    count = ''
+    for char in data:
+        if char.isdigit():
+            count += char
+        else:
+            decoding += char * int(count)
+            count = ''
+    with open(r'task_42_output_data.txt', '+a') as f:
+        f.write(f'Decoded data: {decoding}\n')
+    return decoding
+
+
+with open(r'task_42_encoding_data.txt', 'r') as f:
+    encoding_data = f.read()
+# encoding_data = 'AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEE'
+print(f'Encoded data: {encode(encoding_data)}')
+
+with open(r'task_42_decoding_data.txt', 'r') as f:
+    decoding_data = f.read()
+# decoding_data = '6A1F2D7C1A17E'
+print(f'Decoded data: {decode(decoding_data)}')
